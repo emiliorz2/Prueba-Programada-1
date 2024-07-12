@@ -134,7 +134,8 @@ img {
 /* form principal */
 
 .form-container {
-    max-width: 120rem;
+    max-width: 90rem;
+    width: 90%;
 }
 
 .form__box {

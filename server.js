@@ -1,3 +1,4 @@
+const { log } = require('console');
 const express =  require('express');
 const path = require('path');
 
@@ -9,14 +10,22 @@ const PUBLIC = path.join(__dirname, 'public');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(PUBLIC));
 
+let notas = []
+
+
 app.get('/', (req, res) => {
     console.log('loading Main page');
     res.sendFile(path.join(PUBLIC, 'home.html'));
 });
 
 app.post('/agregarNota', (req, res) => {
-    console.log('loading Main page');
-    res.sendFile(path.join(PUBLIC, 'home.html'));
+    console.log('agregando nota');
+    console.log(req.body)
+
+    console.log('\ntodas las notas');
+    notas.push({id: 1 , ...req.body, date: new Date()})
+    console.log(notas);
+    res.redirect('/');
 });
 
 // app.get('/contactus', (req,res) => {
