@@ -1,0 +1,162 @@
+:root {
+    --gris: rgba(96, 95, 95, 0.5);
+    --dorado: #997938;
+    --blanco: rgba(255, 255, 255, 0.9);
+    --azul: #02295d;
+
+    --mainFont: "Inter", sans-serif;
+    --secondFont: 'Times New Roman', Times, serif;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+
+body {
+    font-family: var(--mainFont);
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    background-color: #1E293B;
+    background-size: cover;
+    background-position: center;
+    /* background-repeat: no-repeat; */
+}
+
+.container {
+    max-width: 120rem;
+    width: 90%;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 900;
+    font-family: var(--secondFont);
+    text-shadow: 2px 2px 4px #000000;
+    text-align: center;
+    color: var(--blanco);
+}
+
+h1 {
+    font-size: 4.4rem;
+}
+
+@media (min-width: 992px) {
+    h1 {
+        font-size: 6rem;
+    }
+}
+
+h2 {
+    font-size: 3.6rem;
+}
+
+@media (min-width: 992px) {
+    h2 {
+        font-size: 5rem;
+    }
+}
+
+h3 {
+    font-size: 2.5rem;
+}
+
+@media (min-width: 992px) {
+    h3 {
+        font-size: 3.6rem;
+    }
+}
+
+p {
+    color: var(--blanco);
+    text-shadow: 2px 2px 4px #000000;
+    font-size: 2.5rem;
+}
+
+
+img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+
+/* globales */
+
+.btn {
+    max-width: 25rem;
+    margin: 2rem;
+    padding: 2rem;
+    font-size: 2.5rem;
+    font-weight: bold;
+    /*Color de texto claro */
+    color: var(--blanco);
+    /* Degradado de azules */
+    background: linear-gradient(45deg, #0D47A1, #1976D2);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+
+
+}
+
+
+.btn:hover {
+    /* Aumenta el tamaño al pasar el mouse */
+    transform: scale(1.05);
+}
+
+/* utilidades */
+
+.text-center {
+    text-align: center;
+}
+
+.mb-10 {
+    margin-bottom: 10rem;
+}
+
+
+/* form principal */
+
+.form-container {
+    max-width: 120rem;
+}
+
+.form__box {
+    margin-bottom: 2rem;
+    display: flex;
+
+}
+
+.form__label {
+    color: var(--blanco);
+    flex-basis: 10rem;
+}
+
+.form_input,
+.form__textarea {
+    flex: 1;
+    border: 1px solid #e1e1e1;
+    padding: 1rem;
+}
+
+.form__btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
