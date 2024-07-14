@@ -33,14 +33,13 @@ app.post('/agregarNota', (req, res) => {
     res.redirect('/');
 });
 
-//actualizar
-app.get('/notas/:id', (req, res) => {
-    const nota = notas.find(n => n.id === req.params.id);
-    if (nota) {
-        res.json(nota);
-    } else {
-        res.status(404).send('Nota no encontrada');
-    }
+//mostrar
+app.get('/notas', (req, res) => {
+    res.sendFile(path.join(PUBLIC, 'notas.html'));
+});
+
+app.get('/api/notas', (req, res) => {
+    res.json(notas.slice(0, 5)); // Limitar a 5 notas
 });
 
 app.put('/notas/:id', (req, res) => {
