@@ -42,22 +42,21 @@ app.get('/api/notas', (req, res) => {
     res.json(notas.slice(0, 5)); // Limitar a 5 notas
 });
 
-app.put('/notas/:id', (req, res) => {
-    const index = notas.findIndex(n => n.id === req.params.id);
-    if (index !== -1) {
-        notas[index] = { ...notas[index], ...req.body, date: new Date() };
-        res.send('Nota actualizada');
-    } else {
-        res.status(404).send('Nota no encontrada');
-    }
+//eliminar
+
+app.delete('/api/notas/:id', (req, res) => {
+    const { id } = req.params;
+    notas = notas.filter(nota => nota.id !== id);
+    res.json({ success: true });
 });
 
-//eliminar
-app.delete('/notas/:id', (req, res) => {
-    const index = notas.findIndex(n => n.id === req.params.id);
+//actualizar
+app.put('/api/notas/:id', (req, res) => {
+    const { id } = req.params;
+    const index = notas.findIndex(n => n.id === id);
     if (index !== -1) {
-        notas.splice(index, 1);
-        res.send('Nota eliminada');
+        notas[index] = { ...notas[index], ...req.body, date: new Date() };
+        res.json({ success: true });
     } else {
         res.status(404).send('Nota no encontrada');
     }
