@@ -14,9 +14,9 @@
 </head>
 
 <body>
-    <nav>
-        <a href="/">Home</a>
-        <a href="/notas">Notas</a>
+    <nav class="nav">
+        <a class="nav__link" href="/">Home</a>
+        <a class="nav__link" href="/notas">Notas</a>
     </nav>
 
 
@@ -27,13 +27,13 @@
                 <div class="form__box">
                     <label for="titulo" class="form__label">Titulo</label>
                     <input class="form_input" type="text" id="titulo" name="titulo"
-                        placeholder="Agregue el titulo de la nota">
+                        placeholder="Agregue el titulo de la nota" required>
                 </div>
 
                 <div class="form__box">
                     <label for="nota" class="form__label">Nota</label>
                     <textarea class="form__textarea" name="nota" id="nota" placeholder="aqui ingresas la nota" cols="10"
-                        rows="3"></textarea>
+                        rows="3" required></textarea>
                 </div>
 
                 <div class="form__btn">

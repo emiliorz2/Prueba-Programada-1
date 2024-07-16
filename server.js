@@ -55,7 +55,7 @@ app.put('/api/notas/:id', (req, res) => {
     const { id } = req.params;
     const index = notas.findIndex(n => n.id === id);
     if (index !== -1) {
-        notas[index] = { ...notas[index], ...req.body, date: new Date() };
+        notas[index] = { ...notas[index], ...req.body, modDate: new Date() };
         res.json({ success: true });
     } else {
         res.status(404).send('Nota no encontrada');
